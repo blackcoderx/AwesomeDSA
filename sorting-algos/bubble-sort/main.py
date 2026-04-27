@@ -1,3 +1,6 @@
+print("Hello Bubble Sorting 🫧")
+
+
 def bubble_sort(arr: list) -> list:
     n: int = len(arr)  # get the lenght of the array
 
