@@ -105,55 +105,7 @@ arr = [64, 25, 12, 22, 11]
 print(selection_sort(arr))  # → [11, 12, 22, 25, 64]
 ```
 
-### JavaScript
 
-```javascript
-function selectionSort(arr) {
-    const n = arr.length;
-
-    for (let i = 0; i < n - 1; i++) {
-        let minIdx = i;
-
-        for (let j = i + 1; j < n; j++) {
-            if (arr[j] < arr[minIdx]) {
-                minIdx = j;
-            }
-        }
-
-        if (minIdx !== i) {
-            [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]];
-        }
-    }
-    return arr;
-}
-
-// Example
-console.log(selectionSort([64, 25, 12, 22, 11]));
-// → [11, 12, 22, 25, 64]
-```
-
-### C
-
-```c
-#include <stdio.h>
-
-void selectionSort(int arr[], int n) {
-    for (int i = 0; i < n - 1; i++) {
-        int minIdx = i;
-
-        for (int j = i + 1; j < n; j++) {
-            if (arr[j] < arr[minIdx])
-                minIdx = j;
-        }
-
-        if (minIdx != i) {
-            int temp = arr[i];
-            arr[i] = arr[minIdx];
-            arr[minIdx] = temp;
-        }
-    }
-}
-```
 
 > **Note:** The `if minIdx != i` guard prevents a redundant swap when the minimum is already in position. This matters when swaps are expensive (e.g. large structs, records on disk).
 
